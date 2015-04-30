@@ -1,0 +1,31 @@
+Hard code input (for now)
+
+BeamSolver.cpp
+-Input
+-main method:
+-Build up Beam object from input
+-Excecute steps in solvingStrategy.txt
+
+Beam.cpp
+-Implementation off Beam class
+-Fields:
+	-E
+	-I	
+	-yMax
+	-A
+-Methods:
+
+Model.cpp
+-Implementation of Model class
+Fields:
+-Beam
+-BC's
+-Loads
+-Resolution
+Methods:
+-isStaticallyDetermined(BC's)
+
+Methods.cpp
+-Collection of methods:
+-Plot method (OpenGL? OGRE?)
+-Write results method
