@@ -68,6 +68,10 @@
     <ClCompile Include="BeamSolver.cpp" />
     <ClCompile Include="Methods.cpp" />
     <ClCompile Include="Model.cpp" />
+    <ClCompile Include="Load.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Load.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
