@@ -1,0 +1,21 @@
+﻿Build started 03.05.2015 02:32:46.
+     1>Project "C:\_DEV\C++\Projects\BeamSolver\BeamSolver.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt BeamSolver.cpp
+         BeamSolver.cpp
+     1>c:\_dev\c++\projects\beamsolver\beamsolver.cpp(100): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\_dev\c++\projects\beamsolver\beamsolver.cpp(106): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\_dev\c++\projects\beamsolver\beamsolver.cpp(112): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\_dev\c++\projects\beamsolver\beamsolver.cpp(97): warning C4101: 'momFunc' : unreferenced local variable
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\_DEV\C++\Projects\BeamSolver\Debug\BeamSolver.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\_DEV\C++\Projects\BeamSolver\Debug\BeamSolver.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\_DEV\C++\Projects\BeamSolver\Debug\BeamSolver.lib" /MACHINE:X86 Debug\Beam.obj
+         Debug\BeamSolver.obj
+         Debug\Methods.obj
+         Debug\Model.obj
+         Debug\Load.obj
+         BeamSolver.vcxproj -> C:\_DEV\C++\Projects\BeamSolver\Debug\BeamSolver.exe
+     1>Done Building Project "C:\_DEV\C++\Projects\BeamSolver\BeamSolver.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.17

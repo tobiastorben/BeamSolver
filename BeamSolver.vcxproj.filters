@@ -31,5 +31,14 @@
     <ClInclude Include="Load.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="Beam.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Model.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Methods.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

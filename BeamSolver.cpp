@@ -1,12 +1,24 @@
 #include <vector>
 #include "Load.h"
+#include "Beam.h"
+#include "Model.h"
+#include "Methods.h"
+#include <iostream>
 
 using namespace std;
 
 
+double inten(double x) {
+
+	return 5;
+}
+
 int main() {
 
 	//---------------Input Section----------------\\
+
+	//Give step lenght of integration
+	double step = 0.0001;
 
 	//Define beam:
 
@@ -55,13 +67,62 @@ int main() {
 
 	vector<Load> distributedLoads;
 
-	distributedLoads.push_back(Load(0, 10, &q));
-}
+	distributedLoads.push_back(Load(0, 10, &inten));
+
+
+	//--------------End of input section--------------------\\
+	//Create beam model object from input data
+	Beam beam = Beam(l, A, E, G, I, yMax, end1, end2);
+
+
+	//Create model object from input data
+	Model model = Model(&beam, distributedLoads, shearForces, moments, axialForce);
+
+	//Solve for reaction forces
+	double Ay, By, Ma, Mb;
+
+	//Check for degrees of freedom
+	if (end1 == 0 || end1 == 2) Ma = 0;
+	if (end2 == 0 || end2 == 2) Mb = 0;
+	if (end1 == 0) Ay = Ma = 0;
+	if (end2 == 0) By = Mb = 0;
+	if (end1 == 1) Ma = 0;
+	if (end2 == 1) Mb = 0;
 
 
 
+	double yLoad = 0;
+	double momentsAboutA = 0;
+	double integral = 0;
+	double(*momFunc)(double);
 
-double q(double x) {
 
-	return 5;
-}
+	for (int i = 0; i < moments.size(); i++) {
+	
+		momentsAboutA += moments[i].first;
+	
+	}
+
+	for (int i = 0; i < shearForces.size(); i++) {
+	
+		yLoad += shearForces[i].first;
+		momentsAboutA -= shearForces[i].first*shearForces[i].second;
+	}
+
+	for (int i = 0; i < distributedLoads.size(); i++) {
+
+		integral = integrate(distributedLoads[i].q, distributedLoads[i].start, distributedLoads[i].end, step);
+		yLoad += integral;
+		momentsAboutA -= integrate(
+
+			[&](double x) {
+
+			double(*intensity)(double) = distributedLoads[i].q;
+			return intensity(x)*x; },
+				distributedLoads[i].start, distributedLoads[i].end, step);
+	}
+
+	
+			return 0;
+
+	}

@@ -71,7 +71,10 @@
     <ClCompile Include="Load.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Beam.h" />
     <ClInclude Include="Load.h" />
+    <ClInclude Include="Methods.h" />
+    <ClInclude Include="Model.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

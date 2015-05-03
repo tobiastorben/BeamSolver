@@ -1,0 +1,51 @@
+Beam-solver:
+
+Define beam from:
+
+-Boundry conditions:
+	-Fixed
+	-Free
+	-Pinned
+
+-Modulus of elasticity (constant to begin with)
+
+-Second moment of inerita (constant to begin with)
+
+-Maximum distance from COG
+
+-Area
+
+-Must be statically determined (for now)
+
+Define loads:
+
+-q(x)
+-Concentrated forces P
+-Concentrated moments M
+-Constant axial load
+
+Solve for reaction forces and moments:
+
+-SigmaX = 0
+-SigmaY = 0
+-SigmaM = 0
+
+-Use vertical reaction force and integrate load to find Q(x)
+
+-Use reaction moments and integrate Q(x) to find M(x)
+
+Having obtained M(x) -> Solve the Euler-Bernoulli Beam equation M(x) = -EI*w''(x):
+
+w'(x) = I(-M/EI) + w'(0) = T(x)
+
+w(x) = I(T(x)) + w(0)
+
+Create array showing:
+	-M(x)
+	-Q(x)
+	-w(x)
+	-T(x)
+	-Max stress(x) (von Mises)
+
+Plot beam with colour indicating stress levels
+
